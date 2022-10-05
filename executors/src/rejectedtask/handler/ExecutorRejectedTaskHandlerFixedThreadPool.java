@@ -1,5 +1,6 @@
 package rejectedtask.handler;
 
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
@@ -11,7 +12,7 @@ public class ExecutorRejectedTaskHandlerFixedThreadPool {
 
         //maximum queue size : 2
         BlockingQueue<Runnable> blockingQueue =
-                new LinkedBlockingQueue<Runnable>(2);
+                new ArrayBlockingQueue<>(2);
 
         //Custome Threadpool executor
         CustomThreadPoolExecutor executor =
